@@ -6,23 +6,22 @@ import {
 
   const Person = props => {
     const [collapse, setCollapse] = useState(false);
-    
-    const toggle = () => setCollapse(!collapse);
     console.log(props.props.data.results);
-
 
     return (
       props.props.data.results.map((item) => {
+
+        const toggle = () => setCollapse(!collapse);
+
         return (
             <div className="title">
-              <Button color="info" onClick={toggle} style={{ marginBottom: '1rem' }}>Info</Button>
-              <Collapse isOpen={collapse}>
                 <CardBody>
                 <CardTitle>Name: {item.name}</CardTitle>
+                <CardSubtitle>Gender: {item.gender}</CardSubtitle>
                 <CardSubtitle>Height: {item.height}</CardSubtitle>
-                <a href={item.url}><Button color='primary'>{item.name}</Button></a>
+                <CardSubtitle>Eye Color: {item.eye_color}</CardSubtitle>
+                <CardText><a href={item.url}>{item.url}</a></CardText>
                 </CardBody>
-                </Collapse>
             </div> 
           );
     })
