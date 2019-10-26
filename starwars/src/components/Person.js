@@ -11,8 +11,6 @@ import {
     return (
       props.props.data.results.map((item) => {
 
-        const toggle = () => setCollapse(!collapse);
-
         return (
             <div className="title">
                 <CardBody>
@@ -24,8 +22,8 @@ import {
                 </CardBody>
             </div> 
           );
-    })
-    )
+      })
+     )
   }
 
   export default Person;
