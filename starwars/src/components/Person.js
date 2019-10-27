@@ -3,6 +3,7 @@ import {
     Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button, Collapse, CardWrapper,
   } from 'reactstrap';
+  import PersonCard from './PersonCard';;
 
   const Person = props => {
     const [collapse, setCollapse] = useState(false);
@@ -10,18 +11,8 @@ import {
 
     return (
       props.props.data.results.map((item) => {
-
-        return (
-            <div className="title">
-                <CardBody>
-                <CardTitle>Name: {item.name}</CardTitle>
-                <CardSubtitle>Gender: {item.gender}</CardSubtitle>
-                <CardSubtitle>Height: {item.height}</CardSubtitle>
-                <CardSubtitle>Eye Color: {item.eye_color}</CardSubtitle>
-                <CardText><a href={item.url}>{item.url}</a></CardText>
-                </CardBody>
-            </div> 
-          );
+       return <PersonCard name={item.name} gender={item.gender} height={item.height} eye_color={item.eye_color}/>
+        
       })
      )
   }
